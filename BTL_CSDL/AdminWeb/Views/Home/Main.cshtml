@@ -39,755 +39,796 @@
         .search-fied{
             position:absolute;
             left: 35%;
-            top: 40px;
+            top: 85px;
         }
     </style>
 </head>
 <body>
     <p class="input">test</p>
     <section class="main-form">
-        <form>
-            <div class="tool-bar">
-                @*select*@
-                <select class="select-fied" id="select-fied" onchange="showContent()">
-                    <option id="00">00.Chuyên ngành đào tạo</option>
-                    <option id="01">01.Ngành đào tạo</option>
-                    <option id="02">02.Khoa</option>
-                    <option id="03">03.Bộ môn</option>
-                    <option id="04">04.Phần kiến thức</option>
-                    <option id="05">05.Hình thức học</option>
-                    <option id="06">06.Bảng chi tiết học phần</option>
-                    <option id="07">07.Học phần</option>
-                    <option id="08">08.Lớp học phần</option>
-                    <option id="09">09.Sinh viên</option>
-                    <option id="10">10.Danh sách sinh viên lớp học phần</option>
-                    <option id="11">11.Khóa</option>
-                    <option id="12">12.Cảnh cáo</option>
-                    <option id="13">13.Danh Sách cảnh cáo</option>
-                    <option id="14">14.Học Bổng</option>
-                    <option id="15">15.Danh sách học bổng</option>
-                    <option id="16">16.Trình độ ngoại ngữ</option>
-                    <option id="17">17.Kỳ</option>
-                    <option id="18">18.Xếp loại</option>
-                    <option id="19">19.Thi kết thúc</option>
-                    <option id="20">20.Danh sách học phần thi kết thúc</option>
-                    <option id="21">21.Danh sách sinh viên thi kết thúc</option>
-                    <option id="22">22.Lớp chuyên ngành</option>
-                    <option id="23">23.Giảng viên</option>
-                    <option id="24">24.Học vị</option>
-                    <option id="25">25.Danh sách cố vấn học tập</option>
-                    <option id="26">26.Danh sách giám thị </option>
-                    <option id="27">27.Tiết học</option>
-                    <option id="28">28.Phòng học</option>
-                    <option id="29">29.Danh Sách giảng đường</option>
-                    <option id="30">30.Bài thi</option>
-                    <option id="31">31.Lịch học của học phần</option>
-                    <option id="32">32.Danh sách người chấm bài</option>
-                    <option id="33">33.Danh sách đề thi</option>
-                </select>
-                @*search*@
-                <div class="search-fied">
-                    <input class="text-left" id="search-text-fied" placeholder="Key ...." />
-                    <input class="btn btn-outline-secondary" type="submit" value="Search" id="search-btn">
-                </div>
-                @*btn*@
-                <div class="contain-btn">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="radio" name="view-btn" id="delete-btn" autocomplete="off" checked> View
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="delete-btn" id="delete-btn" autocomplete="off"> Delete
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="add-btn" id="add-btn" autocomplete="off"> Add
-                        </label>
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="modify-btn" id="modify-btn" autocomplete="off"> Modify
-                        </label>
+        @*nav tab*@
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab-admin" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Dữ liệu tổng hợp</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Thống kế</a>
+            </div>
+        </nav>
+        @*nav content*@
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <form>
+                    <div class="tool-bar">
+                        @*select*@
+                        <select class="select-fied" id="select-fied" onchange="showContent()">
+                            <option id="00">00.Chuyên ngành đào tạo</option>
+                            <option id="01">01.Ngành đào tạo</option>
+                            <option id="02">02.Khoa</option>
+                            <option id="03">03.Bộ môn</option>
+                            <option id="04">04.Phần kiến thức</option>
+                            <option id="05">05.Hình thức học</option>
+                            <option id="06">06.Bảng chi tiết học phần</option>
+                            <option id="07">07.Học phần</option>
+                            <option id="08">08.Lớp học phần</option>
+                            <option id="09">09.Sinh viên</option>
+                            <option id="10">10.Danh sách sinh viên lớp học phần</option>
+                            <option id="11">11.Khóa</option>
+                            <option id="12">12.Cảnh cáo</option>
+                            <option id="13">13.Danh Sách cảnh cáo</option>
+                            <option id="14">14.Học Bổng</option>
+                            <option id="15">15.Danh sách học bổng</option>
+                            <option id="16">16.Trình độ ngoại ngữ</option>
+                            <option id="17">17.Kỳ</option>
+                            <option id="18">18.Xếp loại</option>
+                            <option id="19">19.Thi kết thúc</option>
+                            <option id="20">20.Danh sách học phần thi kết thúc</option>
+                            <option id="21">21.Danh sách sinh viên thi kết thúc</option>
+                            <option id="22">22.Lớp chuyên ngành</option>
+                            <option id="23">23.Giảng viên</option>
+                            <option id="24">24.Học vị</option>
+                            <option id="25">25.Danh sách cố vấn học tập</option>
+                            <option id="26">26.Danh sách giám thị </option>
+                            <option id="27">27.Tiết học</option>
+                            <option id="28">28.Phòng học</option>
+                            <option id="29">29.Danh Sách giảng đường</option>
+                            <option id="30">30.Bài thi</option>
+                            <option id="31">31.Lịch học của học phần</option>
+                            <option id="32">32.Danh sách người chấm bài</option>
+                            <option id="33">33.Danh sách đề thi</option>
+                        </select>
+                        @*search*@
+                        <div class="search-fied">
+                            <input class="text-left" id="search-text-fied" placeholder="Key ...." />
+                            <input class="btn btn-outline-secondary" type="submit" value="Search" id="search-btn">
+                        </div>
+                        @*btn*@
+                        <div class="contain-btn">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="view-btn" id="delete-btn" autocomplete="off" checked> View
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="delete-btn" id="delete-btn" autocomplete="off"> Delete
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="add-btn" id="add-btn" autocomplete="off"> Add
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="modify-btn" id="modify-btn" autocomplete="off"> Modify
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="table-responsive contain-chose-content">
+                        <table id="ce_00" class="table table-bordered ce_hide ce_show">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maNganhDT</th>
+                                    <th scope="col">maChuyenNganh</th>
+                                    <th scope="col">tenChuyenNganh</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_01" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maNganhDT</th>
+                                    <th scope="col">tenNganhDT</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_02" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maTruongKhoa</th>
+                                    <th scope="col">maKhoa</th>
+                                    <th scope="col">tenKhoa</th>
+                                    <th scope="col">ChuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_03" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maTruongBM</th>
+                                    <th scope="col">maBM</th>
+                                    <th scope="col">maKhoa</th>
+                                    <th scope="col">tenBM</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_04" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maPhanKT</th>
+                                    <th scope="col">tenPKT</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_05" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maPhanKT</th>
+                                    <th scope="col">tenPhanKT</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_06" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHP</th>
+                                    <th scope="col">tenHinhThuc</th>
+                                    <th scope="col">soTiet</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_07" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHP</th>
+                                    <th scope="col">soTC</th>
+                                    <th scope="col">maPKT</th>
+                                    <th scope="col">tenHP</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_08" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHP</th>
+                                    <th scope="col">maLopHP</th>
+                                    <th scope="col">maxStore</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_09" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">tenLopCN</th>
+                                    <th scope="col">tenSV</th>
+                                    <th scope="col">hoSV</th>
+                                    <th scope="col">ngaySinh</th>
+                                    <th scope="col">gioiTinh</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">sdt</th>
+                                    <th scope="col">sdtPhuHuynh</th>
+                                    <th scope="col">tenKhoaSV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_10" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maLopHP</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_11" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maKhoa</th>
+                                    <th scope="col">tenKhoaSV</th>
+                                    <th scope="col">namThanhLap</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_12" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maCanhCao</th>
+                                    <th scope="col">tenCanhCao</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_13" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maCanhCao</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_14" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHocBong</th>
+                                    <th scope="col">tenHocBong</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_15" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHocBong</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_16" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tenTrinhDoNN</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_17" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tenKy</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_18" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tenXepLoai</th>
+                                    <th scope="col">diem</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_19" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tenXepLoai</th>
+                                    <th scope="col">diem</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_20" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maLopHP</th>
+                                    <th scope="col">maThiKetThuc</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_21" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">maThiKetThuc</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_22" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maLopCN</th>
+                                    <th scope="col">tenLopCN</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_23" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maGV</th>
+                                    <th scope="col">maBM</th>
+                                    <th scope="col">tenGV</th>
+                                    <th scope="col">hoGV</th>
+                                    <th scope="col">ngaySinh</th>
+                                    <th scope="col">gioiTinh</th>
+                                    <th scope="col">email</th>
+                                    <th scope="col">sdt</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_24" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maGV</th>
+                                    <th scope="col">tenHV</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_25" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maLopCN</th>
+                                    <th scope="col">maCV</th>
+                                    <th scope="col">ngayThanhLap</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_26" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maThiKetThuc</th>
+                                    <th scope="col">maGV</th>
+                                    <th scope="col">ngayPC</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_27" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">tietHoc</th>
+                                    <th scope="col">timeStart</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_28" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maGD</th>
+                                    <th scope="col">soPhong</th>
+                                    <th scope="col">tang</th>
+                                    <th scope="col">viTri</th>
+                                    <th scope="col">suChua</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_29" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maGD</th>
+                                    <th scope="col">maHP</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_30" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maBaiThi</th>
+                                    <th scope="col">ngayTao</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_31" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maHP</th>
+                                    <th scope="col">tietHoc</th>
+                                    <th scope="col">thu</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_32" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maBaiThi</th>
+                                    <th scope="col">maGV</th>
+                                    <th scope="col">ngayCham</th>
+                                    <th scope="col">diem</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="ce_33" class="table table-bordered ce_hide">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">maBaiThi</th>
+                                    <th scope="col">maSV</th>
+                                    <th scope="col">maDeThi</th>
+                                    <th scope="col">soTo</th>
+                                    <th scope="col">chuThich</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                    <td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
             </div>
-            <div class="table-responsive contain-chose-content">
-                <table id="ce_00" class="table table-bordered ce_hide ce_show">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maNganhDT</th>
-                            <th scope="col">maChuyenNganh</th>
-                            <th scope="col">tenChuyenNganh</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_01" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maNganhDT</th>
-                            <th scope="col">tenNganhDT</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_02" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maTruongKhoa</th>
-                            <th scope="col">maKhoa</th>
-                            <th scope="col">tenKhoa</th>
-                            <th scope="col">ChuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_03" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maTruongBM</th>
-                            <th scope="col">maBM</th>
-                            <th scope="col">maKhoa</th>
-                            <th scope="col">tenBM</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_04" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maPhanKT</th>
-                            <th scope="col">tenPKT</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_05" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maPhanKT</th>
-                            <th scope="col">tenPhanKT</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_06" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHP</th>
-                            <th scope="col">tenHinhThuc</th>
-                            <th scope="col">soTiet</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_07" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHP</th>
-                            <th scope="col">soTC</th>
-                            <th scope="col">maPKT</th>
-                            <th scope="col">tenHP</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_08" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHP</th>
-                            <th scope="col">maLopHP</th>
-                            <th scope="col">maxStore</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_09" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">tenLopCN</th>
-                            <th scope="col">tenSV</th>
-                            <th scope="col">hoSV</th>
-                            <th scope="col">ngaySinh</th>
-                            <th scope="col">gioiTinh</th>
-                            <th scope="col">email</th>
-                            <th scope="col">sdt</th>
-                            <th scope="col">sdtPhuHuynh</th>
-                            <th scope="col">tenKhoaSV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_10" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maLopHP</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_11" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maKhoa</th>
-                            <th scope="col">tenKhoaSV</th>
-                            <th scope="col">namThanhLap</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_12" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maCanhCao</th>
-                            <th scope="col">tenCanhCao</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_13" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maCanhCao</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_14" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHocBong</th>
-                            <th scope="col">tenHocBong</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_15" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHocBong</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_16" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tenTrinhDoNN</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_17" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tenKy</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_18" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tenXepLoai</th>
-                            <th scope="col">diem</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_19" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tenXepLoai</th>
-                            <th scope="col">diem</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_20" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maLopHP</th>
-                            <th scope="col">maThiKetThuc</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_21" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">maThiKetThuc</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_22" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maLopCN</th>
-                            <th scope="col">tenLopCN</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_23" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maGV</th>
-                            <th scope="col">maBM</th>
-                            <th scope="col">tenGV</th>
-                            <th scope="col">hoGV</th>
-                            <th scope="col">ngaySinh</th>
-                            <th scope="col">gioiTinh</th>
-                            <th scope="col">email</th>
-                            <th scope="col">sdt</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_24" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maGV</th>
-                            <th scope="col">tenHV</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_25" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maLopCN</th>
-                            <th scope="col">maCV</th>
-                            <th scope="col">ngayThanhLap</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_26" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maThiKetThuc</th>
-                            <th scope="col">maGV</th>
-                            <th scope="col">ngayPC</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_27" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">tietHoc</th>
-                            <th scope="col">timeStart</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_28" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maGD</th>
-                            <th scope="col">soPhong</th>
-                            <th scope="col">tang</th>
-                            <th scope="col">viTri</th>
-                            <th scope="col">suChua</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_29" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maGD</th>
-                            <th scope="col">maHP</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_30" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maBaiThi</th>
-                            <th scope="col">ngayTao</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_31" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maHP</th>
-                            <th scope="col">tietHoc</th>
-                            <th scope="col">thu</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_32" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maBaiThi</th>
-                            <th scope="col">maGV</th>
-                            <th scope="col">ngayCham</th>
-                            <th scope="col">diem</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="ce_33" class="table table-bordered ce_hide">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">maBaiThi</th>
-                            <th scope="col">maSV</th>
-                            <th scope="col">maDeThi</th>
-                            <th scope="col">soTo</th>
-                            <th scope="col">chuThich</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                            <td>?</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </form>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <form>
+                    <div class="tool-bar">
+                        @*select*@
+                        <select class="select-fied" id="select-fied" onchange="showContent()">
+                            <option id="10">00.Số lượng sinh viên tại mỗi lớp chuyên ngành</option>
+                        </select>
+                        <div class="table-responsive contain-chose-content">
+                            <table id="ce_100" class="table table-bordered ce_hide ce_show">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">MaLopCn</th>
+                                        <th scope="col">TenCN</th>
+                                        <th scope="col">SoSinhVien</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>?</td>
+                                        <td>?</td>
+                                        <td>?</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+           </div>
+        </div>
     </section>
     <script src="~/Content/js/jquery-3.2.1.min.js"></script>
     <script src="~/Content/js/bootstrap.min.js"></script>
