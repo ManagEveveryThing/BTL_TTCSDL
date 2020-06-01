@@ -46,3 +46,7 @@ D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.csproj
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.csproj.CopyComplete
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.pdb
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.dll
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.dll
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.xml
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.xml

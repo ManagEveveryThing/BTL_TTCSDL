@@ -1,4 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,7 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,26 +99,421 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Contents\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Contents\css\font-face.css" />
+    <Content Include="Contents\css\theme.css" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="Contents\images\bg-title-01.jpg" />
+    <Content Include="Contents\images\bg-title-02.jpg" />
+    <Content Include="Contents\images\icon\avatar-01.jpg" />
+    <Content Include="Contents\images\icon\avatar-02.jpg" />
+    <Content Include="Contents\images\icon\avatar-03.jpg" />
+    <Content Include="Contents\images\icon\avatar-04.jpg" />
+    <Content Include="Contents\images\icon\avatar-05.jpg" />
+    <Content Include="Contents\images\icon\avatar-06.jpg" />
+    <Content Include="Contents\images\icon\avatar-big-01.jpg" />
+    <Content Include="Contents\images\icon\logo-blue.png" />
+    <Content Include="Contents\images\icon\logo-mini.png" />
+    <Content Include="Contents\images\icon\logo-white.png" />
+    <Content Include="Contents\images\icon\logo.png" />
+    <Content Include="Contents\images\icon\Untitled-1.jpg" />
+    <Content Include="Contents\js\bootstrap-datetimepicker.js" />
+    <Content Include="Contents\js\homeController.js" />
+    <Content Include="Contents\js\main.js" />
+    <Content Include="Contents\js\moment.js" />
+    <Content Include="Contents\media\9606031aabebde32fa96edeff071a132.jpg" />
+    <Content Include="Contents\vendor\animsition\animsition.min.css" />
+    <Content Include="Contents\vendor\animsition\animsition.min.js" />
+    <Content Include="Contents\vendor\bootstrap-4.1\bootstrap.min.css" />
+    <Content Include="Contents\vendor\bootstrap-4.1\bootstrap.min.js" />
+    <Content Include="Contents\vendor\bootstrap-4.1\popper.min.js" />
+    <Content Include="Contents\vendor\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Contents\vendor\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Contents\vendor\chartjs\Chart.bundle.min.js" />
+    <Content Include="Contents\vendor\circle-progress\circle-progress.js" />
+    <Content Include="Contents\vendor\circle-progress\circle-progress.min.js" />
+    <Content Include="Contents\vendor\countdown\countdowntime.js" />
+    <Content Include="Contents\vendor\countdown\jquery.countdown.min.js" />
+    <Content Include="Contents\vendor\countdown\moment-timezone-with-data.min.js" />
+    <Content Include="Contents\vendor\countdown\moment-timezone.min.js" />
+    <Content Include="Contents\vendor\countdown\moment.min.js" />
+    <Content Include="Contents\vendor\counter-up\jquery.counterup.min.js" />
+    <Content Include="Contents\vendor\counter-up\jquery.waypoints.min.js" />
+    <Content Include="Contents\vendor\counter-up\waypoints.min.js" />
+    <Content Include="Contents\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Contents\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Contents\vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="Contents\vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="Contents\vendor\font-awesome-5\css\fontawesome-all.min.css" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-brands-400.svg" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-regular-400.svg" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-solid-900.svg" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\CHANGELOG.txt" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\CONTRIBUTING.txt" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.css" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.min.css" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.min.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.print.css" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\fullcalendar.print.min.css" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\gcal.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\gcal.min.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\lib\moment.min.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\LICENSE.txt" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale-all.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\af.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-dz.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-kw.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-ly.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-ma.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-sa.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar-tn.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ar.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\be.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\bg.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\bs.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ca.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\cs.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\da.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\de-at.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\de-ch.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\de.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\el.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\en-au.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\en-ca.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\en-gb.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\en-ie.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\en-nz.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\es-do.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\es-us.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\es.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\et.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\eu.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\fa.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\fi.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\fr-ca.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\fr-ch.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\fr.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\gl.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\he.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\hi.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\hr.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\hu.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\id.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\is.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\it.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ja.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ka.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\kk.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ko.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\lb.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\lt.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\lv.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\mk.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ms-my.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ms.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\nb.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\nl-be.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\nl.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\nn.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\pl.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\pt-br.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\pt.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ro.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\ru.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sk.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sl.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sq.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sr-cyrl.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sr.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\sv.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\th.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\tr.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\uk.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\vi.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\zh-cn.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\zh-hk.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\locale\zh-tw.js" />
+    <Content Include="Contents\vendor\fullcalendar-3.10.0\README.txt" />
+    <Content Include="Contents\vendor\jquery-3.2.1.min.js" />
+    <Content Include="Contents\vendor\jquery-ui.min.js" />
+    <Content Include="Contents\vendor\lightbox2\dist\css\lightbox.css" />
+    <Content Include="Contents\vendor\lightbox2\dist\images\close.png" />
+    <Content Include="Contents\vendor\lightbox2\dist\images\loading.gif" />
+    <Content Include="Contents\vendor\lightbox2\dist\images\next.png" />
+    <Content Include="Contents\vendor\lightbox2\dist\images\prev.png" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox-plus-jquery.js" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox.js" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox.min.js" />
+    <Content Include="Contents\vendor\lightbox2\src\css\lightbox.css" />
+    <Content Include="Contents\vendor\lightbox2\src\images\close.png" />
+    <Content Include="Contents\vendor\lightbox2\src\images\loading.gif" />
+    <Content Include="Contents\vendor\lightbox2\src\images\next.png" />
+    <Content Include="Contents\vendor\lightbox2\src\images\prev.png" />
+    <Content Include="Contents\vendor\lightbox2\src\js\lightbox.js" />
+    <Content Include="Contents\vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="Contents\vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Contents\vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Contents\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Contents\vendor\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Contents\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Contents\vendor\progressbar\progressbar.js" />
+    <Content Include="Contents\vendor\progressbar\progressbar.min.js" />
+    <Content Include="Contents\vendor\select2\select2.min.css" />
+    <Content Include="Contents\vendor\select2\select2.min.js" />
+    <Content Include="Contents\vendor\slick\ajax-loader.gif" />
+    <Content Include="Contents\vendor\slick\fonts\slick.svg" />
+    <Content Include="Contents\vendor\slick\slick-theme.css" />
+    <Content Include="Contents\vendor\slick\slick.css" />
+    <Content Include="Contents\vendor\slick\slick.js" />
+    <Content Include="Contents\vendor\slick\slick.min.js" />
+    <Content Include="Contents\vendor\smk-accordion\accordion.css" />
+    <Content Include="Contents\vendor\smk-accordion\accordion.js" />
+    <Content Include="Contents\vendor\smk-accordion\accordion.min.js" />
+    <Content Include="Contents\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.brazil.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.europe.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.france.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.germany.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.min.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.russia.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.sampledata.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.usa.js" />
+    <Content Include="Contents\vendor\vector-map\jquery.vmap.world.js" />
+    <Content Include="Contents\vendor\vector-map\jqvmap.min.css" />
+    <Content Include="Contents\vendor\wow\animate.css" />
+    <Content Include="Contents\vendor\wow\wow.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\Style.css" />
-    <Content Include="Content\js\bootstrap.min.js" />
-    <Content Include="Content\js\jquery-3.2.1.min.js" />
-    <Content Include="Content\js\scritpmain.js" />
-    <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-100italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-200italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-600italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-900italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="Contents\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-brands-400.eot" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-brands-400.ttf" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-brands-400.woff" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-brands-400.woff2" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-regular-400.eot" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-regular-400.ttf" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-regular-400.woff" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-regular-400.woff2" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-solid-900.eot" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-solid-900.ttf" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-solid-900.woff" />
+    <Content Include="Contents\vendor\font-awesome-5\webfonts\fa-solid-900.woff2" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Contents\vendor\lightbox2\dist\js\lightbox.min.map" />
+    <Content Include="Contents\vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Contents\vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Contents\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Contents\vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Contents\vendor\slick\config.rb" />
+    <Content Include="Contents\vendor\slick\fonts\slick.eot" />
+    <Content Include="Contents\vendor\slick\fonts\slick.ttf" />
+    <Content Include="Contents\vendor\slick\fonts\slick.woff" />
+    <Content Include="Contents\vendor\slick\slick-theme.less" />
+    <Content Include="Contents\vendor\slick\slick-theme.scss" />
+    <Content Include="Contents\vendor\slick\slick.less" />
+    <Content Include="Contents\vendor\slick\slick.scss" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
@@ -117,22 +523,70 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB\BaiThi.cs" />
+    <Compile Include="Models\DB\BoMon.cs" />
+    <Compile Include="Models\DB\CanhCao.cs" />
+    <Compile Include="Models\DB\CHiTietHP.cs" />
+    <Compile Include="Models\DB\ChuyenNganhDT.cs" />
+    <Compile Include="Models\DB\colName.cs" />
+    <Compile Include="Models\DB\DBContext_QLDT.cs" />
+    <Compile Include="Models\DB\DiemDanh.cs" />
+    <Compile Include="Models\DB\DScanhcao.cs" />
+    <Compile Include="Models\DB\DSCoVanHT.cs" />
+    <Compile Include="Models\DB\DSDeThi.cs" />
+    <Compile Include="Models\DB\DSDiemDanhSV.cs" />
+    <Compile Include="Models\DB\DSGiamThi.cs" />
+    <Compile Include="Models\DB\DSGiangDuong.cs" />
+    <Compile Include="Models\DB\DSGVChamBai.cs" />
+    <Compile Include="Models\DB\DSGVHP.cs" />
+    <Compile Include="Models\DB\DSHocBong.cs" />
+    <Compile Include="Models\DB\DSHPThiKetThuc.cs" />
+    <Compile Include="Models\DB\DSKQHT.cs" />
+    <Compile Include="Models\DB\DSSVLopHP.cs" />
+    <Compile Include="Models\DB\DSSVThiKetThuc.cs" />
+    <Compile Include="Models\DB\GiangDuong.cs" />
+    <Compile Include="Models\DB\GiangVien.cs" />
+    <Compile Include="Models\DB\HinhThucHoc.cs" />
+    <Compile Include="Models\DB\HocBong.cs" />
+    <Compile Include="Models\DB\HocPhan.cs" />
+    <Compile Include="Models\DB\HocViGV.cs" />
+    <Compile Include="Models\DB\Khoa.cs" />
+    <Compile Include="Models\DB\KhoaSv.cs" />
+    <Compile Include="Models\DB\KyHoc.cs" />
+    <Compile Include="Models\DB\LichHP.cs" />
+    <Compile Include="Models\DB\LopCNSv.cs" />
+    <Compile Include="Models\DB\LopHP.cs" />
+    <Compile Include="Models\DB\NganhDT.cs" />
+    <Compile Include="Models\DB\PhanKT.cs" />
+    <Compile Include="Models\DB\SinhVien.cs" />
+    <Compile Include="Models\DB\tableName.cs" />
+    <Compile Include="Models\DB\ThiKetThuc.cs" />
+    <Compile Include="Models\DB\TietHoc.cs" />
+    <Compile Include="Models\DB\TrinhDoNN.cs" />
+    <Compile Include="Models\DB\XepLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shared\layout_main.cshtml" />
+    <Content Include="Views\Home\Table.cshtml" />
+    <Content Include="Views\Shared\_Eachrow.cshtml" />
+    <Content Include="Views\Shared\_PartialPage_TableData.cshtml" />
+    <Content Include="Views\Shared\_TableDB.cshtml" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,14 +596,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -175,7 +634,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
