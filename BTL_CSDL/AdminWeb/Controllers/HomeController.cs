@@ -643,16 +643,16 @@ namespace AdminWeb.Controllers
             switch (tableName)
             {
                 case "Blog":
-                    data = new Blog();
-                    (data as Blog).maBlog = Request.Form["0"];
-                    (data as Blog).maDD = Request.Form["1"];
-                    (data as Blog).username = Request.Form["2"];
-                    (data as Blog).content = Request.Form["3"];
-                    (data as Blog).pic = Request.Form["4"];
-                    (data as Blog).note = Request.Form["5"];
-                    (data as Blog).header = Request.Form["6"];
-                    AddBlogs(data as Blog);
-                    data = context.Database.SqlQuery<Blog>("select * from " + tableName).ToList();
+                    data = new BaiThi();
+                    (data as BaiThi).maBlog = Request.Form["0"];
+                    (data as BaiThi).maDD = Request.Form["1"];
+                    (data as BaiThi).username = Request.Form["2"];
+                    (data as BaiThi).content = Request.Form["3"];
+                    (data as BaiThi).pic = Request.Form["4"];
+                    (data as BaiThi).note = Request.Form["5"];
+                    (data as BaiThi).header = Request.Form["6"];
+                    AddBlogs(data as BaiThi);
+                    data = context.Database.SqlQuery<BaiThi>("select * from " + tableName).ToList();
                     break;
                 case "Customer":
                     data = new Customer();
@@ -1053,6 +1053,32 @@ namespace AdminWeb.Controllers
             ViewBag.colName = context.Database.SqlQuery<colName>("select * from colName where TABLE_NAME = '" + tableName + "'").ToList();
             ViewBag.tableName = tableName;
             return PartialView("_TableDB", data);
+        }
+
+        void addBaiThi(BaiThi data)
+        {
+            if (data.maBaiThi != null)
+            {
+                if(db.BaiThis.Find(data.maBaiThi) == null)
+                {
+                    db.BaiThis.Attach(data);
+                    db.BaiThis.Add(data);
+                }
+            }
+        }
+        void addBoMon(BoMon data)
+        {
+            if(data.maBM != null)
+            {
+                if(db.BoMons.Find(data.maBM) == null)
+                {
+                    if(db.GiangViens.Find(data.maTruongBM) != null)
+                    {
+                        db.BoMons.Attach(data);
+                        db.BoMons.Add(data);
+                    }
+                }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@using Admin.Models.DB;
+﻿@using AdminWeb.Models.DB;
 
 @model object
     <table class="table table-borderless table-striped table-earning">
@@ -16,8 +16,8 @@
             @{ switch (ViewBag.tableName as string)
                 {
 
-                    case "Blog":
-                        foreach (Blog it in Model as List<Blog>)
+                    case "BaiThi":
+                        foreach (BaiThi it in Model as List<BaiThi>)
                         {
                             <tr class="ajax_clickOnRow">
                                 <td>
@@ -26,12 +26,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maBlog </td>
-                                <td>  @it.maDD </td>
-                                <td>  @it.username </td>
-                                <td>  @it.content </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maBaiThi </td>
+                                <td>  @it.ngayTao </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -45,8 +42,8 @@
                             </tr>
                         }
                         break;
-                    case "Customer":
-                        foreach (Customer it in Model as List<Customer>)
+                    case "BoMon":
+                        foreach (BoMon it in Model as List<BoMon>)
                         {
                             <tr>
                                 <td>
@@ -55,13 +52,530 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.username </td>
-                                <td>  @it.pass </td>
-                                <td>  @it.tenKH </td>
-                                <td>  @it.hoKH </td>
-                                <td>  @it.phoneNum </td>
+                                <td>  @it.maTruongBM </td>
+                                <td class="key1">  @it.maBM </td>
+                                <td>  @it.maKhoa </td>
+                                <td>  @it.tenBM </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.soLuongGV </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "CanhCao":
+                        foreach (CanhCao it in Model as List<CanhCao>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maCanhCao </td>
+                                <td>  @it.tenCanhCao </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "CHiTietHP":
+                        foreach (CHiTietHP it in Model as List<CHiTietHP>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maHP </td>
+                                <td class="key2">  @it.TenHinhThuc </td>
+                                <td>  @it.sotiet </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "ChuyenNganhDT":
+                        foreach (ChuyenNganhDT it in Model as List<ChuyenNganhDT>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td>  @it.maNganhDT </td>
+                                <td class="key1">  @it.maChuyenNganh </td>
+                                <td>  @it.maBoMon </td>
+                                <td>  @it.tenChuyenNganh </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DiemDanh":
+                        foreach (DiemDanh it in Model as List<DiemDanh>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maDD </td>
+                                <td>  @it.maLopHP </td>
+                                <td>  @it.soBuoiDiemDanh </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DScanhcao":
+                        foreach (DScanhcao it in Model as List<DScanhcao>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maCanhCao </td>
+                                <td class="key2">  @it.maSV </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSCoVanHT":
+                        foreach (DSCoVanHT it in Model as List<DSCoVanHT>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maLopCN </td>
+                                <td class="key2">  @it.maCV </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSDeThi":
+                        foreach (DSDeThi it in Model as List<DSDeThi>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maBaiThi </td>
+                                <td class="key2">  @it.maDeThi </td>
+                                <td>  @it.soTo </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSDiemDanhSV":
+                        foreach (DSDiemDanhSV it in Model as List<DSDiemDanhSV>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maDD </td>
+                                <td class="key2">  @it.maSV </td>
+                                <td>  @it.soBuoi </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSGiamThi":
+                        foreach (DSGiamThi it in Model as List<DSGiamThi>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maThiKetThuc </td>
+                                <td class="key2">  @it.maGV </td>
+                                <td>  @it.ngayPC </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSGiangDuong":
+                        foreach (DSGiangDuong it in Model as List<DSGiangDuong>)
+                        {
+                        <tr>
+                            <td>
+                                <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                </label>
+                            </td>
+                            <td class="key1">  @it.maGD </td>
+                            <td class="key2">  @it.maLopHP </td>
+                            <td>  @it.thu </td>
+                            <td>  @it.chuThich </td>
+                            <td>
+                                <div class="table-data-feature">
+                                    <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </button>
+                                    <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                        break;
+                    case "DSGVChamBai":
+                        foreach (DSGVChamBai it in Model as List<DSGVChamBai>)
+                        {
+                        <tr>
+                            <td>
+                                <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                </label>
+                            </td>
+                            <td class="key1">  @it.maBaiThi </td>
+                            <td class="key2">  @it.maGV </td>
+                            <td>  @it.ngayCham </td>
+                            <td>  @it.diem </td>
+                            <td>  @it.chuThich </td>
+                            <td>
+                                <div class="table-data-feature">
+                                    <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </button>
+                                    <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                        break;
+                    case "DSGVHP":
+                        foreach (DSGVHP it in Model as List<DSGVHP>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maGV </td>
+                                <td class="key2">  @it.maHP </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSHocBong":
+                        foreach (DSHocBong it in Model as List<DSHocBong>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maHocBong </td>
+                                <td class="key2">  @it.MaSV </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSHPThiKetThuc":
+                        foreach (DSHPThiKetThuc it in Model as List<DSHPThiKetThuc>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maLopHP </td>
+                                <td class="key2">  @it.maThiKetThuc </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSKQHT":
+                        foreach (DSKQHT it in Model as List<DSKQHT>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maSV </td>
+                                <td>  @it.tenXepLoai </td>
+                                <td class="key2">  @it.tenKy </td>
+                                <td>  @it.diem </td>
+                                <td>  @it.sotinchino </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSSVLopHP":
+                        foreach (DSSVLopHP it in Model as List<DSSVLopHP>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.malopHP </td>
+                                <td class="key2">  @it.maSV </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.diem1 </td>
+                                <td>  @it.diem3 </td>
+                                <td>  @it.diem6 </td>
+                                <td>  @it.diemHe4 </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "DSSVThiKetThuc":
+                        foreach (DSSVThiKetThuc it in Model as List<DSSVThiKetThuc>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maSV </td>
+                                <td class="key2">  @it.maBaiThi </td>
+                                <td class="key3">  @it.maThiKetThuc </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "GiangDuong":
+                        foreach (GiangDuong it in Model as List<GiangDuong>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maGD </td>
+                                <td>  @it.soPhong </td>
+                                <td>  @it.tang </td>
+                                <td>  @it.viTri </td>
+                                <td>  @it.sucChua </td>
+                                <td>  @it.chuThich </td>
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                            <i class="zmdi zmdi-edit"></i>
+                                        </button>
+                                        <button class="item ajax_deleteRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        break;
+                    case "GiangVien":
+                        foreach (GiangVien it in Model as List<GiangVien>)
+                        {
+                            <tr>
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td class="key1">  @it.maGV </td>
+                                <td>  @it.maBM </td>
+                                <td>  @it.tenGV </td>
+                                <td>  @it.hoGV </td>
+                                <td>  @it.ngaySinh </td>
+                                <td>  @it.gioiTinh </td>
                                 <td>  @it.email </td>
-                                <td>  @it.note </td>
+                                <td>  @it.sdt </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -75,8 +589,8 @@
                             </tr>
                         }
                         break;
-                    case "DestinationReview":
-                        foreach (DestinationReview it in Model as List<DestinationReview>)
+                    case "HinhThucHoc":
+                        foreach (HinhThucHoc it in Model as List<HinhThucHoc>)
                         {
                             <tr>
                                 <td>
@@ -85,11 +599,8 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maDD </td>
-                                <td>  @it.tenDD </td>
-                                <td>  @it.tenTinh </td>
-                                <td>  @it.tenQG </td>
-                                <td>  @it.pic </td>
+                                <td class="key1">  @it.tenHinhThuc </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -103,8 +614,8 @@
                             </tr>
                         }
                         break;
-                    case "DSDatXe":
-                        foreach (DSDatXe it in Model as List<DSDatXe>)
+                    case "HocBong":
+                        foreach (HocBong it in Model as List<HocBong>)
                         {
                             <tr>
                                 <td>
@@ -113,10 +624,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maHD </td>
-                                <td class="key2">  @it.bienSo </td>
-                                <td>  @it.cost </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maHocBong </td>
+                                <td>  @it.tenHocBong </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -130,8 +640,8 @@
                             </tr>
                         }
                         break;
-                    case "DSKSCanTT":
-                        foreach (DSKSCanTT it in Model as List<DSKSCanTT>)
+                    case "HocPhan":
+                        foreach (HocPhan it in Model as List<HocPhan>)
                         {
                             <tr>
                                 <td>
@@ -140,10 +650,11 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maKS </td>
-                                <td class="key2">  @it.maHD </td>
-                                <td>  @it.cost </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maHP </td>
+                                <td>  @it.soTC </td>
+                                <td>  @it.maPKT </td>
+                                <td>  @it.tenHP </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -157,8 +668,8 @@
                             </tr>
                         }
                         break;
-                    case "DSKSTheoTrip":
-                        foreach (DSKSTheoTrip it in Model as List<DSKSTheoTrip>)
+                    case "HocViGV":
+                        foreach (HocViGV it in Model as List<HocViGV>)
                         {
                             <tr>
                                 <td>
@@ -167,9 +678,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maCD </td>
-                                <td class="key2">  @it.maKS </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maGV </td>
+                                <td class="key2">  @it.tenHV </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -183,8 +694,8 @@
                             </tr>
                         }
                         break;
-                    case "DSKSTrongWL":
-                        foreach (DSKSTrongWL it in Model as List<DSKSTrongWL>)
+                    case "Khoa":
+                        foreach (Khoa it in Model as List<Khoa>)
                         {
                             <tr>
                                 <td>
@@ -193,10 +704,10 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maKS </td>
-                                <td class="key2">  @it.maWL </td>
-                                <td>  @it.ngayAdd </td>
-                                <td>  @it.note </td>
+                                <td>  @it.maTruongKhoa </td>
+                                <td class="key1">  @it.maKhoa </td>
+                                <td>  @it.tenKhoa </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -210,8 +721,8 @@
                             </tr>
                         }
                         break;
-                    case "DSTourCanTT":
-                        foreach (DSTourCanTT it in Model as List<DSTourCanTT>)
+                    case "KhoaSv":
+                        foreach (KhoaSv it in Model as List<KhoaSv>)
                         {
                             <tr>
                                 <td>
@@ -220,10 +731,11 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maTour </td>
-                                <td class="key2">  @it.maHD </td>
-                                <td>  @it.cost </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maKhoaSv </td>
+                                <td>  @it.tenKhoaSv </td>
+                                <td>  @it.namThanhLap </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.soLuongSV </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -237,8 +749,8 @@
                             </tr>
                         }
                         break;
-                    case "DSTourTrongWL":
-                        foreach (DSTourTrongWL it in Model as List<DSTourTrongWL>)
+                    case "KyHoc":
+                        foreach (KyHoc it in Model as List<KyHoc>)
                         {
                             <tr>
                                 <td>
@@ -247,10 +759,8 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maTour </td>
-                                <td class="key2">  @it.maWL </td>
-                                <td>  @it.ngayAdd </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.tenKy </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -264,8 +774,8 @@
                             </tr>
                         }
                         break;
-                    case "DSTripTheoTour":
-                        foreach (DSTripTheoTour it in Model as List<DSTripTheoTour>)
+                    case "LichHP":
+                        foreach (LichHP it in Model as List<LichHP>)
                         {
                             <tr>
                                 <td>
@@ -274,9 +784,11 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maCD </td>
-                                <td class="key2">  @it.maTour </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maHP </td>
+                                <td class="key2">  @it.tietHoc </td>
+                                <td>  @it.soLuong </td>
+                                <td class="key3">  @it.thu </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -290,8 +802,8 @@
                             </tr>
                         }
                         break;
-                    case "ElecBill":
-                        foreach (ElecBill it in Model as List<ElecBill>)
+                    case "LopCNSv":
+                        foreach (LopCNSv it in Model as List<LopCNSv>)
                         {
                             <tr>
                                 <td>
@@ -300,12 +812,11 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maHD </td>
-                                <td>  @it.username </td>
-                                <td>  @it.tongTien </td>
-                                <td>  @it.paymentMethod </td>
-                                <td>  @it.dayCreate </td>
-                                <td>  @it.note </td>
+                                <td class="key1">  @it.maLopCN </td>
+                                <td>  @it.tenLopCN </td>
+                                <td>  @it.maCNDT </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.soLuongSV </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -319,8 +830,8 @@
                             </tr>
                         }
                         break;
-                    case "HomeStay":
-                        foreach (HomeStay it in Model as List<HomeStay>)
+                    case "LopHP":
+                        foreach (LopHP it in Model as List<LopHP>)
                         {
                             <tr>
                                 <td>
@@ -329,12 +840,11 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maKS </td>
-                                <td>  @it.maDD </td>
-                                <td>  @it.tenKS </td>
-                                <td>  @it.phoneNum </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td>  @it.maHP </td>
+                                <td class="key1">  @it.maLopHP </td>
+                                <td>  @it.maxStore </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.curStore </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -348,8 +858,8 @@
                             </tr>
                         }
                         break;
-                    case "Nation":
-                        foreach (Nation it in Model as List<Nation>)
+                    case "NganhDT":
+                        foreach (NganhDT it in Model as List<NganhDT>)
                         {
                             <tr>
                                 <td>
@@ -358,10 +868,10 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maQG </td>
-                                <td>  @it.tenQG </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.maNganhDT </td>
+                                <td>  @it.tenNganhDT </td>
+                                <td>  @it.maBoMon </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -375,8 +885,8 @@
                             </tr>
                         }
                         break;
-                    case "Province":
-                        foreach (Province it in Model as List<Province>)
+                    case "PhanKT":
+                        foreach (PhanKT it in Model as List<PhanKT>)
                         {
                             <tr>
                                 <td>
@@ -385,11 +895,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maTinh </td>
-                                <td>  @it.maQG </td>
-                                <td>  @it.tenTinh </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.maPKT </td>
+                                <td>  @it.tenPKT </td>
+                                <td>  @it.chuThich </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -403,8 +911,8 @@
                             </tr>
                         }
                         break;
-                    case "Taxi":
-                        foreach (Taxi it in Model as List<Taxi>)
+                    case "SinhVien":
+                        foreach (SinhVien it in Model as List<SinhVien>)
                         {
                             <tr>
                                 <td>
@@ -413,11 +921,18 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.bienSo </td>
-                                <td>  @it.maDD </td>
-                                <td>  @it.soGhe </td>
-                                <td>  @it.phoneNum </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.maSV </td>
+                                <td>  @it.maLopCN </td>
+                                <td>  @it.tenSV </td>
+                                <td>  @it.hoSV </td>
+                                <td>  @it.ngaySinh </td>
+                                <td>  @it.gioiTinh </td>
+                                <td>  @it.email </td>
+                                <td>  @it.sdt </td>
+                                <td>  @it.sdtPhuHUynh </td>
+                                <td>  @it.KhoaSv </td>
+                                <td>  @it.chuThich </td>
+                                <td>  @it.isLearn </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -431,8 +946,8 @@
                             </tr>
                         }
                         break;
-                    case "Tour":
-                        foreach (Tour it in Model as List<Tour>)
+                    case "ThiKetThuc":
+                        foreach (ThiKetThuc it in Model as List<ThiKetThuc>)
                         {
                             <tr>
                                 <td>
@@ -441,13 +956,10 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maTour </td>
-                                <td>  @it.tenTour </td>
-                                <td>  @it.dayStart </td>
-                                <td>  @it.soLuongMax </td>
-                                <td>  @it.soDem </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.maThiKetThuc </td>
+                                <td>  @it.ngayThi </td>
+                                <td>  @it.thoiGianBatDau </td>
+                                <td>  @it.chuThich' </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -461,8 +973,8 @@
                             </tr>
                         }
                         break;
-                    case "TourDestination":
-                        foreach (TourDestination it in Model as List<TourDestination>)
+                    case "TietHoc":
+                        foreach (TietHoc it in Model as List<TietHoc>)
                         {
                             <tr>
                                 <td>
@@ -471,11 +983,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maDD </td>
-                                <td>  @it.maTinh </td>
-                                <td>  @it.tenDD </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.tietHoc1 </td>
+                                <td>  @it.timeStart </td>
+                                <td>  @it.chuThich' </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -489,8 +999,8 @@
                             </tr>
                         }
                         break;
-                    case "Trip":
-                        foreach (Trip it in Model as List<Trip>)
+                    case "TrinhDoNN":
+                        foreach (TrinhDoNN it in Model as List<TrinhDoNN>)
                         {
                             <tr>
                                 <td>
@@ -499,12 +1009,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maCD </td>
-                                <td>  @it.maDDStart </td>
-                                <td>  @it.maDDEnd </td>
-                                <td>  @it.dayStrat </td>
-                                <td>  @it.pic </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.tenTrinhDoNN </td>
+                                <td  class="key2">  @it.maSV </td>
+                                <td>  @it.chuThich' </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -518,8 +1025,8 @@
                             </tr>
                         }
                         break;
-                    case "WishList":
-                        foreach (WishList it in Model as List<WishList>)
+                    case "XepLoai":
+                        foreach (XepLoai it in Model as List<XepLoai>)
                         {
                             <tr>
                                 <td>
@@ -528,9 +1035,9 @@
                                         <span class="au-checkmark"></span>
                                     </label>
                                 </td>
-                                <td class="key1">  @it.maWL </td>
-                                <td>  @it.username </td>
-                                <td>  @it.note </td>
+                                <td  class="key1">  @it.tenXepLoai </td>
+                                <td  class="key2">  @it.diem </td>
+                                <td>  @it.chuThich' </td>
                                 <td>
                                     <div class="table-data-feature">
                                         <button class="item ajax_editRow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">

@@ -573,7 +573,6 @@
     <Content Include="Views\Shared\layout_main.cshtml" />
     <Content Include="Views\Home\Table.cshtml" />
     <Content Include="Views\Shared\_Eachrow.cshtml" />
-    <Content Include="Views\Shared\_PartialPage_TableData.cshtml" />
     <Content Include="Views\Shared\_TableDB.cshtml" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.1.min.map" />
