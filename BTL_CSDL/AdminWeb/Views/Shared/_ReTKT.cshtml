@@ -1,0 +1,28 @@
+﻿
+@using AdminWeb.Models.DB;
+@model List<ThiKetThuc>
+
+
+
+<table class="table table-borderless table-striped table-earning " id="tableTKT">
+    <thead>
+        <tr>
+            <th>Mã Thi Kết Thúc</th>
+            <th>Ngày thi </th>
+            <th>Thời gian bắt đầu</th>
+            <th>note</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ThiKetThuc it in Model)
+        {
+            <tr class="rowTKT">
+                <td class="keyTKT"> @it.maThiKetThuc  </td>
+                <td> @it.ngayThi </td>
+                <td> @it.thoiGianBatDau </td>
+                <td> @it.chuThich </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/Contents/js/homeController.js"></script>

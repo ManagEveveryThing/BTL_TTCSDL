@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/layout_main.cshtml";
 }
 @using AdminWeb.Models.DB;
-
+<style>
+    .container {
+    }
+</style>
 <br />
 <br />
 <br />
@@ -52,8 +55,6 @@
                     </div>
                 </div>
             </div>
-
-
             <!-- END DATA TABLE -->
         </div>
     </div>
@@ -62,10 +63,12 @@
             <!-- DATA TABLE-->
             <div class="table-responsive table--no-card m-b-40" id="dataTable">
                 @*@Html.Action("_PartialPage_TableData","Home",new { nametable = "Blog" })*@
-
             </div>
 
             <!-- END DATA TABLE-->
         </div>
     </div>
+</div>
+<div>
+<div class="modal fade" id="myModal" role="dialog"> </div>
 </div>

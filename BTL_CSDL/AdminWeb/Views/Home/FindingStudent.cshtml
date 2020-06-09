@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "FindingStudent";
+    Layout = "~/Views/Shared/layout_main.cshtml";
+}
+
+
+<style>
+    
+</style>
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        <form>
+            <input type="checkbox" name="MSV" class="MSV" /> <label>ID Student</label>
+            <input type="checkbox" name="NSV" class="NSV" /> <label>Name Student</label>
+            <input class="au-input au-input--xl find_feid" type="text" name="search" placeholder="Search for student" />
+            <button class="au-btn--submit ajax_FindingStudent" >
+                <i class="zmdi zmdi-search"></i>
+            </button>
+        </form>
+    </div>
+    <br />
+    <br />
+</div>
+<div class="container">
+    <div class="row">
+        <div class="row m-t-30">
+            <div class="col-md-12">
+                <div class ="table-responsive table--no-card m-b-40" id="ajax_tableRE">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

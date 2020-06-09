@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "FindingTKT";
+    Layout = "~/Views/Shared/layout_main.cshtml";
+}
+
+
+
+<style>
+
+</style>
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        <form>
+            <input class="au-input au-input--xl find_feid" type="text" name="search" placeholder="Search for Ending test..." />
+            <button class="au-btn--submit ajax_FindingTKT">
+                <i class="zmdi zmdi-search"></i>
+            </button>
+        </form>
+    </div>
+    <br /><br />
+    <h3>Test Ending </h3>
+    <div class="container">
+        <div class="row">
+            <div class="row m-t-30">
+                <div class="col-md-12">
+                    <div class="table-responsive table--no-card m-b-40" id="ajax_tableTKT">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="SV_TKT" style="display:none">
+        <h3>Result test </h3>
+        <div class="container">
+            <div class="row">
+                <div class="row m-t-30">
+                    <div class="col-md-12">
+                        <div class="table-responsive table--no-card m-b-40" id="ajax_tableRETKT">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

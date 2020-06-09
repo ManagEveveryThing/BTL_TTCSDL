@@ -1,0 +1,33 @@
+﻿
+@using AdminWeb.Models.DB;
+@model List<findTKT>
+
+
+
+<table class="table table-borderless table-striped table-earning ">
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Tên sinh viên </th>
+            <th>Ngày sinh</th>
+            <th>Tên học phần</th>
+            <th>Điểm chuyên cần</th>
+            <th>Điểm thường xuyên</th>
+            <th>Điểm thi kết thúc</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (findTKT it in Model)
+        {
+            <tr>
+                <td> @it.maSV  </td>
+                <td> @it.hoSV @it.tenSV </td>
+                <td> @it.ngaySinh </td>
+                <td> @it.tenHP </td>
+                <td> @it.diemCC </td>
+                <td> @it.diemTX </td>
+                <td> @it.diemTHi </td>
+            </tr>
+        }
+    </tbody>
+</table>

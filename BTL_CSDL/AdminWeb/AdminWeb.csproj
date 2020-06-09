@@ -529,7 +529,7 @@
     <Compile Include="Models\DB\CHiTietHP.cs" />
     <Compile Include="Models\DB\ChuyenNganhDT.cs" />
     <Compile Include="Models\DB\colName.cs" />
-    <Compile Include="Models\DB\DBContext_QLDT.cs" />
+    <Compile Include="Models\DB\DBcontext_QLDT.cs" />
     <Compile Include="Models\DB\DiemDanh.cs" />
     <Compile Include="Models\DB\DScanhcao.cs" />
     <Compile Include="Models\DB\DSCoVanHT.cs" />
@@ -544,6 +544,8 @@
     <Compile Include="Models\DB\DSKQHT.cs" />
     <Compile Include="Models\DB\DSSVLopHP.cs" />
     <Compile Include="Models\DB\DSSVThiKetThuc.cs" />
+    <Compile Include="Models\DB\findStudent.cs" />
+    <Compile Include="Models\DB\findTKT.cs" />
     <Compile Include="Models\DB\GiangDuong.cs" />
     <Compile Include="Models\DB\GiangVien.cs" />
     <Compile Include="Models\DB\HinhThucHoc.cs" />
@@ -586,6 +588,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\FindingStudent.cshtml" />
+    <Content Include="Views\Home\FindingTKT.cshtml" />
+    <Content Include="Views\Shared\_resultFindingStudent.cshtml" />
+    <Content Include="Views\Shared\_resultFindingTest.cshtml" />
+    <Content Include="Views\Shared\_ReTKT.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

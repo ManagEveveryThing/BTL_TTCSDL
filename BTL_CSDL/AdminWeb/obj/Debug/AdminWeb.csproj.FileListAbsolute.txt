@@ -27,6 +27,8 @@ D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\roslyn\vbc.exe.config
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\roslyn\vbc.rsp
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\roslyn\VBCSCompiler.exe
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.dll
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\Microsoft.Web.Infrastructure.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Helpers.dll
@@ -35,6 +37,8 @@ D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Razor.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.Deployment.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.Razor.dll
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.xml
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.xml
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Razor.xml
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.xml
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.Deployment.xml
@@ -42,11 +46,7 @@ D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Webpages.R
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Helpers.xml
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\System.Web.Mvc.xml
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.csprojAssemblyReference.cache
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.csproj.CopyComplete
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.dll
 D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.pdb
-D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.dll
-D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.dll
-D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.xml
-D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\bin\EntityFramework.SqlServer.xml
+D:\Programing\Project\Git\BTL_TTCSDL\BTL_CSDL\AdminWeb\obj\Debug\AdminWeb.csprojAssemblyReference.cache

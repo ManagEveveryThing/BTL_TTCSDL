@@ -5,10 +5,10 @@ namespace AdminWeb.Models.DB
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class DBContext_QLDT : DbContext
+    public partial class DBcontext_QLDT : DbContext
     {
-        public DBContext_QLDT()
-            : base("name=DBContext_QLDT")
+        public DBcontext_QLDT()
+            : base("name=DBcontext_QLDT")
         {
         }
 
@@ -30,6 +30,8 @@ namespace AdminWeb.Models.DB
         public virtual DbSet<DSKQHT> DSKQHTs { get; set; }
         public virtual DbSet<DSSVLopHP> DSSVLopHPs { get; set; }
         public virtual DbSet<DSSVThiKetThuc> DSSVThiKetThucs { get; set; }
+        public virtual DbSet<findStudent> findStudents { get; set; }
+        public virtual DbSet<findTKT> findTKTs { get; set; }
         public virtual DbSet<GiangDuong> GiangDuongs { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }
         public virtual DbSet<HinhThucHoc> HinhThucHocs { get; set; }
@@ -272,6 +274,21 @@ namespace AdminWeb.Models.DB
 
             modelBuilder.Entity<DSSVThiKetThuc>()
                 .Property(e => e.maThiKetThuc)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<findStudent>()
+                .Property(e => e.maSV)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<findStudent>()
+                .Property(e => e.sdt)
+                .IsFixedLength()
+                .IsUnicode(false);
+
+            modelBuilder.Entity<findTKT>()
+                .Property(e => e.maSV)
                 .IsFixedLength()
                 .IsUnicode(false);
 

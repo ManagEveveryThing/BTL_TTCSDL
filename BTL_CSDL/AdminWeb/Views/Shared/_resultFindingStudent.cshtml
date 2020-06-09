@@ -1,0 +1,33 @@
+﻿
+@using AdminWeb.Models.DB;
+@model List<findStudent>
+
+    <table class="table table-borderless table-striped table-earning ">
+        <thead>
+            <tr>
+                <th>Mã sinh viên</th>
+                <th>Tên sinh viên </th>
+                <th>Ngày sinh</th>
+                <th>Lớp chuyên ngành</th>
+                <th>Khóa</th>
+                <th>SĐT</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (findStudent it in Model)
+            {
+                <tr>
+                    <td> @it.maSV  </td>
+                    <td> @it.hoSV @it.tenSV </td>
+                    <td> @it.ngaySinh </td>
+                    <td> @it.TenLopCN </td>
+                    <td> @it.TenKhoaSV </td>
+                    <td> @it.sdt </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
