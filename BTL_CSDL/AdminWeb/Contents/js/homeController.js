@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     
-    $(".ajax_editRow").click(function () {
+    $(".ajax_editRow").click(function (e) {
+        e.preventDefault();
         var nameTable = $(".ajax_selected_click option:selected").text();
         var key1 = $(this).closest("tr").find(".key1").text();
         var key2 = $(this).closest("tr").find(".key2").text();
@@ -24,7 +25,8 @@
 
     });
 
-    $(".ajax_deleteRow").click(function () {
+    $(".ajax_deleteRow").click(function (e) {
+        e.preventDefault();
         var dataModel = $('#myModal');
         var nameTable = $(".ajax_selected_click option:selected").text();
         var key1 = $(this).closest("tr").find(".key1").text();
@@ -40,8 +42,8 @@
         });
     });
 
-    $(".ajax_add_item").click(function () {
-
+    $(".ajax_add_item").click(function (e) {
+        e.preventDefault();
         var nameTable = $(".ajax_selected_click option:selected").text();
         var dataModel = $('#myModal');
         $.ajax({
@@ -54,7 +56,8 @@
         });
     });
 
-    $(".ajax_selected_click").change(function () {
+    $(".ajax_selected_click").change(function (e) {
+        e.preventDefault();
         var nameTb = $(".ajax_selected_click option:selected").text();
         var dataModel = $('#dataTable');
         $.ajax({

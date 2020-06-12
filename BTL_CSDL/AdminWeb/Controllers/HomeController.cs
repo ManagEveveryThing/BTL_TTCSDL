@@ -558,7 +558,7 @@ namespace AdminWeb.Controllers
                     (dataO as BaiThi).maBaiThi = Request.Form["50"];
                     (dataO as BaiThi).ngayTao = DateTime.Parse(Request.Form["51"]);
                     (dataO as BaiThi).chuThich = Request.Form["52"];
-                    ModBaiThi(data as BaiThi, dataO as BaiThi);
+                    ModBaiThi(dataO as BaiThi, data as BaiThi);
                     data = db.Database.SqlQuery<BaiThi>("select * from " + tableName).ToList();
                     break;
                 case "BoMon":
@@ -576,7 +576,7 @@ namespace AdminWeb.Controllers
                     (dataO as BoMon).tenBM = Request.Form["53"];
                     (dataO as BoMon).chuThich = Request.Form["54"];
                     (dataO as BoMon).soLuongGV = Int32.Parse(Request.Form["55"]);
-                    ModBoMon(data as BoMon, dataO as BoMon);
+                    ModBoMon(dataO as BoMon, data as BoMon);
                     data = db.Database.SqlQuery<BoMon>("select * from " + tableName).ToList();
                     break;
                 case "CanhCao":
@@ -588,7 +588,7 @@ namespace AdminWeb.Controllers
                     (dataO as CanhCao).maCanhCao = Request.Form["50"];
                     (dataO as CanhCao).tenCanhCao = Request.Form["51"];
                     (dataO as CanhCao).chuThich = Request.Form["52"];
-                    ModCanhCao(data as CanhCao, dataO as CanhCao);
+                    ModCanhCao(dataO as CanhCao, data as CanhCao);
                     data = db.Database.SqlQuery<CanhCao>("select * from " + tableName).ToList();
                     break;
                 case "CHiTietHP":
@@ -602,7 +602,7 @@ namespace AdminWeb.Controllers
                     (dataO as CHiTietHP).TenHinhThuc = Request.Form["51"];
                     (dataO as CHiTietHP).sotiet = Int32.Parse((Request.Form["52"]));
                     (dataO as CHiTietHP).chuThich = Request.Form["53"];
-                    ModCHiTietHP(data as CHiTietHP, dataO as CHiTietHP);
+                    ModCHiTietHP(dataO as CHiTietHP, data as CHiTietHP);
                     data = db.Database.SqlQuery<CHiTietHP>("select * from " + tableName).ToList();
                     break;
                 case "ChuyenNganhDT":
@@ -618,7 +618,7 @@ namespace AdminWeb.Controllers
                     (dataO as ChuyenNganhDT).maBoMon = Request.Form["52"];
                     (dataO as ChuyenNganhDT).tenChuyenNganh = Request.Form["53"];
                     (dataO as ChuyenNganhDT).chuThich = Request.Form["54"];
-                    ModChuyenNganhDT(data as ChuyenNganhDT, dataO as ChuyenNganhDT);
+                    ModChuyenNganhDT(dataO as ChuyenNganhDT, data as ChuyenNganhDT);
                     data = db.Database.SqlQuery<ChuyenNganhDT>("select * from " + tableName).ToList();
                     break;
                 case "DiemDanh":
@@ -630,7 +630,7 @@ namespace AdminWeb.Controllers
                     (dataO as DiemDanh).maDD = Request.Form["50"];
                     (dataO as DiemDanh).maLopHP = Request.Form["51"];
                     (dataO as DiemDanh).soBuoiDiemDanh = Int32.Parse(Request.Form["52"]);
-                    ModDiemDanh(data as DiemDanh, dataO as DiemDanh);
+                    ModDiemDanh(dataO as DiemDanh, data as DiemDanh);
                     data = db.Database.SqlQuery<DiemDanh>("select * from " + tableName).ToList();
                     break;
                 case "DScanhcao":
@@ -642,7 +642,7 @@ namespace AdminWeb.Controllers
                     (dataO as DScanhcao).maCanhCao = Request.Form["50"];
                     (dataO as DScanhcao).maSV = Request.Form["51"];
                     (dataO as DScanhcao).chuThich = Request.Form["52"];
-                    ModDScanhcao(data as DScanhcao, dataO as DScanhcao);
+                    ModDScanhcao(dataO as DScanhcao, data as DScanhcao);
                     data = db.Database.SqlQuery<DScanhcao>("select * from " + tableName).ToList();
                     break;
                 case "DSCoVanHT":
@@ -654,7 +654,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSCoVanHT).maLopCN = Request.Form["50"];
                     (dataO as DSCoVanHT).maCV = Request.Form["51"];
                     (dataO as DSCoVanHT).chuThich = Request.Form["52"];
-                    ModDSCoVanHT(data as DSCoVanHT, dataO as DSCoVanHT);
+                    ModDSCoVanHT(dataO as DSCoVanHT, data as DSCoVanHT);
                     data = db.Database.SqlQuery<DSCoVanHT>("select * from " + tableName).ToList();
                     break;
                 case "DSDeThi":
@@ -668,7 +668,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSDeThi).maDeThi = Request.Form["51"];
                     (dataO as DSDeThi).soTo = Int32.Parse((Request.Form["52"]));
                     (dataO as DSDeThi).chuThich = Request.Form["53"];
-                    ModDSDeThi(data as DSDeThi, dataO as DSDeThi);
+                    ModDSDeThi(dataO as DSDeThi, data as DSDeThi);
                     data = db.Database.SqlQuery<DSDeThi>("select * from " + tableName).ToList();
                     break;
                 case "DSDiemDanhSV":
@@ -680,7 +680,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSDiemDanhSV).maDD = Request.Form["50"];
                     (dataO as DSDiemDanhSV).maSV = Request.Form["51"];
                     (dataO as DSDiemDanhSV).soBuoi = Int32.Parse(Request.Form["52"]);
-                    ModDSDiemDanhSV(data as DSDiemDanhSV, dataO as DSDiemDanhSV);
+                    ModDSDiemDanhSV(dataO as DSDiemDanhSV, data as DSDiemDanhSV);
                     data = db.Database.SqlQuery<DSDiemDanhSV>("select * from " + tableName).ToList();
                     break;
                 case "DSGiamThi":
@@ -694,7 +694,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSGiamThi).maGV = Request.Form["51"];
                     (dataO as DSGiamThi).ngayPC = DateTime.Parse((Request.Form["52"]));
                     (dataO as DSGiamThi).chuThich = Request.Form["53"];
-                    ModDSGiamThi(data as DSGiamThi, dataO as DSGiamThi);
+                    ModDSGiamThi(dataO as DSGiamThi, data as DSGiamThi);
                     data = db.Database.SqlQuery<DSGiamThi>("select * from " + tableName).ToList();
                     break;
                 case "DSGiangDuong":
@@ -708,7 +708,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSGiangDuong).maLopHP = Request.Form["51"];
                     (dataO as DSGiangDuong).thu = Int32.Parse(Request.Form["52"]);
                     (dataO as DSGiangDuong).chuThich = Request.Form["53"];
-                    ModDSGiangDuong(data as DSGiangDuong, dataO as DSGiangDuong);
+                    ModDSGiangDuong(dataO as DSGiangDuong, data as DSGiangDuong);
                     data = db.Database.SqlQuery<DSGiangDuong>("select * from " + tableName).ToList();
                     break;
                 case "DSGVChamBai":
@@ -724,7 +724,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSGVChamBai).ngayCham = DateTime.Parse((Request.Form["52"]));
                     (dataO as DSGVChamBai).diem = Double.Parse((Request.Form["53"]));
                     (dataO as DSGVChamBai).chuThich = Request.Form["54"];
-                    ModDSGVChamBai(data as DSGVChamBai, dataO as DSGVChamBai);
+                    ModDSGVChamBai(dataO as DSGVChamBai, data as DSGVChamBai);
                     data = db.Database.SqlQuery<DSGVChamBai>("select * from " + tableName).ToList();
                     break;
                 case "DSGVHP":
@@ -736,7 +736,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSGVHP).maGV = Request.Form["50"];
                     (dataO as DSGVHP).maHP = Request.Form["51"];
                     (dataO as DSGVHP).chuThich = Request.Form["52"];
-                    ModDSGVHP(data as DSGVHP, dataO as DSGVHP);
+                    ModDSGVHP(dataO as DSGVHP, data as DSGVHP);
                     data = db.Database.SqlQuery<DSGVHP>("select * from " + tableName).ToList();
                     break;
                 case "DSHocBong":
@@ -748,7 +748,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSHocBong).maHocBong = Request.Form["50"];
                     (dataO as DSHocBong).MaSV = Request.Form["51"];
                     (dataO as DSHocBong).chuThich = Request.Form["52"];
-                    ModDSHocBong(data as DSHocBong, dataO as DSHocBong);
+                    ModDSHocBong(dataO as DSHocBong, data as DSHocBong);
                     data = db.Database.SqlQuery<DSHocBong>("select * from " + tableName).ToList();
                     break;
                 case "DSHPThiKetThuc":
@@ -760,7 +760,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSHPThiKetThuc).maLopHP = Request.Form["50"];
                     (dataO as DSHPThiKetThuc).maThiKetThuc = Request.Form["51"];
                     (dataO as DSHPThiKetThuc).chuThich = Request.Form["52"];
-                    ModDSHPThiKetThuc(data as DSHPThiKetThuc, dataO as DSHPThiKetThuc);
+                    ModDSHPThiKetThuc(dataO as DSHPThiKetThuc, data as DSHPThiKetThuc);
                     data = db.Database.SqlQuery<DSHPThiKetThuc>("select * from " + tableName).ToList();
                     break;
                 case "DSKQHT":
@@ -778,7 +778,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSKQHT).diem = Double.Parse(Request.Form["53"]);
                     (dataO as DSKQHT).sotinchino = Int32.Parse(Request.Form["54"]);
                     (dataO as DSKQHT).chuThich = Request.Form["55"];
-                    ModDSKQHT(data as DSKQHT, dataO as DSKQHT);
+                    ModDSKQHT(dataO as DSKQHT, data as DSKQHT);
                     data = db.Database.SqlQuery<DSKQHT>("select * from " + tableName).ToList();
                     break;
                 case "DSSVLopHP":
@@ -798,7 +798,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSSVLopHP).diem3 = Double.Parse(Request.Form["54"]);
                     (dataO as DSSVLopHP).diem6 = Double.Parse(Request.Form["55"]);
                     (dataO as DSSVLopHP).diemHe4 = Double.Parse(Request.Form["56"]);
-                    ModDSSVLopHP(data as DSSVLopHP, dataO as DSSVLopHP);
+                    ModDSSVLopHP(dataO as DSSVLopHP, data as DSSVLopHP);
                     data = db.Database.SqlQuery<DSSVLopHP>("select * from " + tableName).ToList();
                     break;
                 case "DSSVThiKetThuc":
@@ -812,7 +812,7 @@ namespace AdminWeb.Controllers
                     (dataO as DSSVThiKetThuc).maBaiThi = Request.Form["51"];
                     (dataO as DSSVThiKetThuc).maThiKetThuc = Request.Form["52"];
                     (dataO as DSSVThiKetThuc).chuThich = Request.Form["53"];
-                    ModDSSVThiKetThuc(data as DSSVThiKetThuc, dataO as DSSVThiKetThuc);
+                    ModDSSVThiKetThuc(dataO as DSSVThiKetThuc, data as DSSVThiKetThuc);
                     data = db.Database.SqlQuery<DSSVThiKetThuc>("select * from " + tableName).ToList();
                     break;
                 case "GiangDuong":
@@ -830,7 +830,7 @@ namespace AdminWeb.Controllers
                     (dataO as GiangDuong).viTri = Request.Form["53"];
                     (dataO as GiangDuong).sucChua = Int32.Parse(Request.Form["54"]);
                     (dataO as GiangDuong).chuThich = Request.Form["55"];
-                    ModGiangDuong(data as GiangDuong, dataO as GiangDuong);
+                    ModGiangDuong(dataO as GiangDuong, data as GiangDuong);
                     data = db.Database.SqlQuery<GiangDuong>("select * from " + tableName).ToList();
                     break;
                 case "GiangVien":
@@ -850,7 +850,7 @@ namespace AdminWeb.Controllers
                     (dataO as GiangVien).gioiTinh = Request.Form["54"];
                     (dataO as GiangVien).email = Request.Form["55"];
                     (dataO as GiangVien).sdt = Request.Form["56"];
-                    ModGiangVien(data as GiangVien, dataO as GiangVien);
+                    ModGiangVien(dataO as GiangVien, data as GiangVien);
                     data = db.Database.SqlQuery<GiangVien>("select * from " + tableName).ToList();
                     break;
                 case "HinhThucHoc":
@@ -860,7 +860,7 @@ namespace AdminWeb.Controllers
                     dataO = new HinhThucHoc();
                     (dataO as HinhThucHoc).tenHinhThuc = Request.Form["50"];
                     (dataO as HinhThucHoc).chuThich = Request.Form["51"];
-                    ModHinhThucHoc(data as HinhThucHoc, dataO as HinhThucHoc);
+                    ModHinhThucHoc(dataO as HinhThucHoc, data as HinhThucHoc);
                     data = db.Database.SqlQuery<HinhThucHoc>("select * from " + tableName).ToList();
                     break;
                 case "HocBong":
@@ -872,7 +872,7 @@ namespace AdminWeb.Controllers
                     (dataO as HocBong).maHocBong = Request.Form["50"];
                     (dataO as HocBong).tenHocBong = Request.Form["51"];
                     (dataO as HocBong).chuThich = Request.Form["52"];
-                    ModHocBong(data as HocBong, dataO as HocBong);
+                    ModHocBong(dataO as HocBong, data as HocBong);
                     data = db.Database.SqlQuery<HocBong>("select * from " + tableName).ToList();
                     break;
                 case "HocPhan":
@@ -888,7 +888,7 @@ namespace AdminWeb.Controllers
                     (dataO as HocPhan).maPKT = Request.Form["52"];
                     (dataO as HocPhan).tenHP = Request.Form["53"];
                     (dataO as HocPhan).chuThich = Request.Form["54"];
-                    ModHocPhan(data as HocPhan, dataO as HocPhan);
+                    ModHocPhan(dataO as HocPhan, data as HocPhan);
                     data = db.Database.SqlQuery<HocPhan>("select * from " + tableName).ToList();
                     break;
                 case "HocViGV":
@@ -898,7 +898,7 @@ namespace AdminWeb.Controllers
                     dataO = new HocViGV();
                     (dataO as HocViGV).maGV = Request.Form["50"];
                     (dataO as HocViGV).tenHV = Request.Form["51"];
-                    ModHocViGV(data as HocViGV, dataO as HocViGV);
+                    ModHocViGV(dataO as HocViGV, data as HocViGV);
                     data = db.Database.SqlQuery<HocViGV>("select * from " + tableName).ToList();
                     break;
                 case "Khoa":
@@ -912,7 +912,7 @@ namespace AdminWeb.Controllers
                     (dataO as Khoa).maKhoa = Request.Form["51"];
                     (dataO as Khoa).tenKhoa = Request.Form["52"];
                     (dataO as Khoa).chuThich = Request.Form["53"];
-                    ModKhoa(data as Khoa, dataO as Khoa);
+                    ModKhoa(dataO as Khoa, data as Khoa);
                     data = db.Database.SqlQuery<Khoa>("select * from " + tableName).ToList();
                     break;
                 case "KhoaSv":
@@ -928,7 +928,7 @@ namespace AdminWeb.Controllers
                     (dataO as KhoaSv).namThanhLap = DateTime.Parse(Request.Form["52"]);
                     (dataO as KhoaSv).chuThich = Request.Form["53"];
                     (dataO as KhoaSv).soLuongSV = Int32.Parse(Request.Form["54"]);
-                    ModKhoaSv(data as KhoaSv, dataO as KhoaSv);
+                    ModKhoaSv(dataO as KhoaSv, data as KhoaSv);
                     data = db.Database.SqlQuery<KhoaSv>("select * from " + tableName).ToList();
                     break;
                 case "KyHoc":
@@ -938,7 +938,7 @@ namespace AdminWeb.Controllers
                     dataO = new KyHoc();
                     (dataO as KyHoc).tenKy = Request.Form["50"];
                     (dataO as KyHoc).chuThich = Request.Form["51"];
-                    ModKyHoc(data as KyHoc, dataO as KyHoc);
+                    ModKyHoc(dataO as KyHoc, data as KyHoc);
                     data = db.Database.SqlQuery<KyHoc>("select * from " + tableName).ToList();
                     break;
                 case "LichHP":
@@ -954,7 +954,7 @@ namespace AdminWeb.Controllers
                     (dataO as LichHP).soLuong = Int32.Parse(Request.Form["52"]);
                     (dataO as LichHP).thu = Request.Form["53"];
                     (dataO as LichHP).chuThich = Request.Form["54"];
-                    ModLichHP(data as LichHP, dataO as LichHP);
+                    ModLichHP(dataO as LichHP, data as LichHP);
                     data = db.Database.SqlQuery<LichHP>("select * from " + tableName).ToList();
                     break;
                 case "LopCNSv":
@@ -970,7 +970,7 @@ namespace AdminWeb.Controllers
                     (dataO as LopCNSv).maCNDT = Request.Form["52"];
                     (dataO as LopCNSv).chuThich = Request.Form["53"];
                     (dataO as LopCNSv).soLuongSV = Int32.Parse(Request.Form["54"]);
-                    ModLopCNSv(data as LopCNSv, dataO as LopCNSv);
+                    ModLopCNSv(dataO as LopCNSv, data as LopCNSv);
                     data = db.Database.SqlQuery<LopCNSv>("select * from " + tableName).ToList();
                     break;
                 case "LopHP":
@@ -986,7 +986,7 @@ namespace AdminWeb.Controllers
                     (dataO as LopHP).maxStore = Int32.Parse(Request.Form["52"]);
                     (dataO as LopHP).chuThich = Request.Form["53"];
                     (dataO as LopHP).curStore = Int32.Parse(Request.Form["54"]);
-                    ModLopHP(data as LopHP, dataO as LopHP);
+                    ModLopHP(dataO as LopHP, data as LopHP);
                     data = db.Database.SqlQuery<LopHP>("select * from " + tableName).ToList();
                     break;
                 case "NganhDT":
@@ -1000,7 +1000,7 @@ namespace AdminWeb.Controllers
                     (dataO as NganhDT).tenNganhDT = Request.Form["51"];
                     (dataO as NganhDT).maBoMon = Request.Form["52"];
                     (dataO as NganhDT).chuThich = Request.Form["53"];
-                    ModNganhDT(data as NganhDT, dataO as NganhDT);
+                    ModNganhDT(dataO as NganhDT, data as NganhDT);
                     data = db.Database.SqlQuery<NganhDT>("select * from " + tableName).ToList();
                     break;
                 case "PhanKT":
@@ -1012,7 +1012,7 @@ namespace AdminWeb.Controllers
                     (dataO as PhanKT).maPKT = Request.Form["50"];
                     (dataO as PhanKT).tenPKT = Request.Form["51"];
                     (dataO as PhanKT).chuThich = Request.Form["52"];
-                    ModPhanKT(data as PhanKT, dataO as PhanKT);
+                    ModPhanKT(dataO as PhanKT, data as PhanKT);
                     data = db.Database.SqlQuery<PhanKT>("select * from " + tableName).ToList();
                     break;
                 case "SinhVien":
@@ -1042,7 +1042,7 @@ namespace AdminWeb.Controllers
                     (dataO as SinhVien).maKhoaSv = Request.Form["59"];
                     (dataO as SinhVien).chuThich = Request.Form["60"];
                     (dataO as SinhVien).isLearn = Boolean.Parse(Request.Form["61"]);
-                    ModSinhVien(data as SinhVien, dataO as SinhVien);
+                    ModSinhVien(dataO as SinhVien, data as SinhVien);
                     data = db.Database.SqlQuery<SinhVien>("select * from " + tableName).ToList();
                     break;
                 case "ThiKetThuc":
@@ -1056,7 +1056,7 @@ namespace AdminWeb.Controllers
                     (dataO as ThiKetThuc).ngayThi = DateTime.Parse(Request.Form["51"]);
                     (dataO as ThiKetThuc).thoiGianBatDau = TimeSpan.Parse(Request.Form["52"]);
                     (dataO as ThiKetThuc).chuThich = Request.Form["53"];
-                    ModThiKetThuc(data as ThiKetThuc, dataO as ThiKetThuc);
+                    ModThiKetThuc(dataO as ThiKetThuc, data as ThiKetThuc);
                     data = db.Database.SqlQuery<ThiKetThuc>("select * from " + tableName).ToList();
                     break;
                 case "TietHoc":
@@ -1068,7 +1068,7 @@ namespace AdminWeb.Controllers
                     (dataO as TietHoc).tietHoc1 = Request.Form["50"];
                     (dataO as TietHoc).timeStart = TimeSpan.Parse(Request.Form["51"]);
                     (dataO as TietHoc).chuThich = Request.Form["52"];
-                    ModTietHoc(data as TietHoc, dataO as TietHoc);
+                    ModTietHoc(dataO as TietHoc, data as TietHoc);
                     data = db.Database.SqlQuery<TietHoc>("select * from " + tableName).ToList();
                     break;
                 case "TrinhDoNN":
@@ -1080,7 +1080,7 @@ namespace AdminWeb.Controllers
                     (dataO as TrinhDoNN).tenTrinhDoNN = Request.Form["50"];
                     (dataO as TrinhDoNN).maSV = Request.Form["51"];
                     (dataO as TrinhDoNN).chuThich = Request.Form["52"];
-                    ModTrinhDoNN(data as TrinhDoNN, dataO as TrinhDoNN);
+                    ModTrinhDoNN(dataO as TrinhDoNN, data as TrinhDoNN);
                     data = db.Database.SqlQuery<TrinhDoNN>("select * from " + tableName).ToList();
                     break;
                 case "XepLoai":
@@ -1092,7 +1092,7 @@ namespace AdminWeb.Controllers
                     (dataO as XepLoai).tenXepLoai = Request.Form["50"];
                     (dataO as XepLoai).diem = Double.Parse(Request.Form["51"]);
                     (dataO as XepLoai).chuThich = Request.Form["52"];
-                    ModXepLoai(data as XepLoai, dataO as XepLoai);
+                    ModXepLoai(dataO as XepLoai, data as XepLoai);
                     data = db.Database.SqlQuery<XepLoai>("select * from " + tableName).ToList();
                     break;
                 default:
@@ -1427,7 +1427,14 @@ namespace AdminWeb.Controllers
                     (data as SinhVien).sdtPhuHUynh = Request.Form["8"];
                     (data as SinhVien).maKhoaSv = Request.Form["9"];
                     (data as SinhVien).chuThich = Request.Form["10"];
-                    (data as SinhVien).isLearn = Boolean.Parse(Request.Form["11"]);
+                    if(Request.Form["11"] == "")
+                    {
+                        (data as SinhVien).isLearn = true;
+                    }
+                    else
+                    {
+                        (data as SinhVien).isLearn = Boolean.Parse(Request.Form["11"]);
+                    }
                     AddSinhVien(data as SinhVien);
                     data = db.Database.SqlQuery<SinhVien>("select * from " + tableName).ToList();
                     break;
@@ -1843,193 +1850,199 @@ namespace AdminWeb.Controllers
             ViewBag.tableName = tableName;
             return PartialView("_TableDB", data);
         }
+
+
+        /// <summary>
+        /// Chức năng sửa dữ liệu
+        /// </summary>
         private void ModXepLoai(XepLoai xepLoai1, XepLoai xepLoai2)
         {
-
+            db.Database.ExecuteSqlCommand("execute ModXepLoai '" + xepLoai1.tenXepLoai + "','" + xepLoai2.tenXepLoai + "','" + xepLoai2.diem + "','" + xepLoai2.chuThich + "'");
         }
         private void ModTrinhDoNN(TrinhDoNN trinhDoNN1, TrinhDoNN trinhDoNN2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModTrinhDoNN '" + trinhDoNN1.maSV + "','" + trinhDoNN2.maSV + "','" + trinhDoNN1.tenTrinhDoNN + "','" + trinhDoNN2.tenTrinhDoNN + "','" + trinhDoNN2.chuThich + "'");
         }
 
         private void ModTietHoc(TietHoc tietHoc1, TietHoc tietHoc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModTietHoc '" + tietHoc1.tietHoc1 + "','" + tietHoc2.tietHoc1 + "','" + tietHoc2.timeStart + "','" + tietHoc2.chuThich + "'");
         }
 
         private void ModThiKetThuc(ThiKetThuc thiKetThuc1, ThiKetThuc thiKetThuc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModThiKetThuc '" + thiKetThuc1.maThiKetThuc + "','" + thiKetThuc2.maThiKetThuc + "','" + thiKetThuc2.ngayThi + "','" + thiKetThuc2.thoiGianBatDau + "','" + thiKetThuc2.chuThich + "'");
         }
 
         private void ModSinhVien(SinhVien sinhVien1, SinhVien sinhVien2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModSinhVien '" + sinhVien1.maSV + "','" + sinhVien2.maSV + "','" + sinhVien2.maLopCN + "','" + sinhVien2.tenSV + "','" + sinhVien2.hoSV + "','" + sinhVien2.ngaySinh + "','" + sinhVien2.gioiTinh + "','" + sinhVien2.sdt + "','" 
+                + sinhVien2.sdtPhuHUynh + "','" + sinhVien2.maKhoaSv + "','" + sinhVien2.email + "','" + sinhVien2.chuThich + "'");
         }
 
         private void ModPhanKT(PhanKT phanKT1, PhanKT phanKT2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModPhanKT '" + phanKT1.maPKT + "','" + phanKT2.maPKT + "','" + phanKT2.tenPKT + "','" + phanKT2.chuThich + "'");
         }
 
         private void ModNganhDT(NganhDT nganhDT1, NganhDT nganhDT2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModNganhDT '" + nganhDT1.maNganhDT + "','" + nganhDT2.maNganhDT + "','" + nganhDT2.tenNganhDT + "','" + nganhDT2.maBoMon + "','" + nganhDT2.chuThich + "'");
         }
 
         private void ModLopHP(LopHP lopHP1, LopHP lopHP2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModLopHP '" + lopHP1.maLopHP + "','" + lopHP2.maLopHP + "','" + lopHP2.maxStore + "','" + lopHP2.maHP + "','" + lopHP2.chuThich + "'");
         }
 
         private void ModLopCNSv(LopCNSv lopCNSv1, LopCNSv lopCNSv2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModLopCNSV '" + lopCNSv1.maLopCN + "','" + lopCNSv2.maLopCN + "','" + lopCNSv2.tenLopCN + "','" + lopCNSv2.maCNDT + "','" + lopCNSv2.chuThich + "'");
         }
 
         private void ModLichHP(LichHP lichHP1, LichHP lichHP2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModLichHP '" + lichHP1.maHP + "','" + lichHP2.maHP + "','" + lichHP1.tietHoc + "','" + lichHP2.tietHoc + "','" + lichHP2.soLuong + "','" + lichHP1.thu + "','" + lichHP2.thu  + "','" + lichHP2.chuThich + "'");
         }
 
         private void ModKyHoc(KyHoc kyHoc1, KyHoc kyHoc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModKyHoc '" + kyHoc1.tenKy + "','" + kyHoc2.tenKy + "','" + kyHoc2.chuThich + "'");
         }
 
         private void ModKhoaSv(KhoaSv khoaSv1, KhoaSv khoaSv2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModKhoaSV '" + khoaSv1.maKhoaSv + "','" + khoaSv2.maKhoaSv + "','" + khoaSv2.tenKhoaSv + "','" + khoaSv2.namThanhLap + "','" + khoaSv2.chuThich + "'");
         }
 
         private void ModKhoa(Khoa khoa1, Khoa khoa2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModKhoa '" + khoa1.maKhoa + "','" + khoa2.maTruongKhoa + "','" + khoa2.maKhoa + "','" + khoa2.tenKhoa + "','" + khoa2.chuThich + "'");
         }
 
         private void ModHocViGV(HocViGV hocViGV1, HocViGV hocViGV2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModhocViGV '" + hocViGV1.maGV + "','" + hocViGV2.maGV + "','" + hocViGV1.tenHV + "','" + hocViGV2.tenHV + "','" + hocViGV2.chuThich + "'");
         }
 
         private void ModHocPhan(HocPhan hocPhan1, HocPhan hocPhan2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModHocPhan '" + hocPhan1.maHP + "','" + hocPhan2.maHP + "','" + hocPhan2.soTC + "','" + hocPhan2.maPKT + "','" + hocPhan2.tenHP + "','" + hocPhan2.chuThich + "'");
         }
 
         private void ModHocBong(HocBong hocBong1, HocBong hocBong2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModHocBong '" + hocBong1.maHocBong + "','" + hocBong2.maHocBong + "','" + hocBong2.tenHocBong + "','" + hocBong2.chuThich + "'");
         }
 
         private void ModHinhThucHoc(HinhThucHoc hinhThucHoc1, HinhThucHoc hinhThucHoc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModHinhThucHoc '" + hinhThucHoc1.tenHinhThuc + "','" + hinhThucHoc2.tenHinhThuc + "','" + hinhThucHoc2.chuThich + "'");
         }
 
         private void ModGiangVien(GiangVien giangVien1, GiangVien giangVien2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModGiangVien '" + giangVien1.maGV + "','" + giangVien2.maGV + "','" + giangVien2.maBM + "','" + giangVien2.tenGV + "','" + giangVien2.hoGV + "','" + giangVien2.ngaySinh + "','" + giangVien2.gioiTinh + "','" + giangVien2.sdt + "','" + giangVien2.email + "'");
         }
 
         private void ModGiangDuong(GiangDuong giangDuong1, GiangDuong giangDuong2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModGiangDuong '" + giangDuong1.maGD + "','" + giangDuong2.maGD + "','" + giangDuong2.soPhong + "','" + giangDuong2.tang + "','" + giangDuong2.viTri + "','" + giangDuong2.sucChua + "','" + giangDuong2.chuThich + "'");
         }
 
         private void ModDSSVThiKetThuc(DSSVThiKetThuc dSSVThiKetThuc1, DSSVThiKetThuc dSSVThiKetThuc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSSVThiKetThuc '" + dSSVThiKetThuc1.maBaiThi + "','" + dSSVThiKetThuc1.maSV + "','" + dSSVThiKetThuc2.maBaiThi + "','" + dSSVThiKetThuc2.maSV + "','" + dSSVThiKetThuc1.maThiKetThuc + "','" + dSSVThiKetThuc2.maThiKetThuc + "','" + dSSVThiKetThuc2.chuThich + "'");
         }
 
         private void ModDSSVLopHP(DSSVLopHP dSSVLopHP1, DSSVLopHP dSSVLopHP2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSSVLopHP '" + dSSVLopHP1.malopHP + "','" + dSSVLopHP1.maSV + "','" + dSSVLopHP2.malopHP + "','" + dSSVLopHP2.maSV + "','" + dSSVLopHP2.chuThich + "'");
         }
 
         private void ModDSKQHT(DSKQHT dSKQHT1, DSKQHT dSKQHT2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSKQHT '" + dSKQHT1.tenKy + "','" + dSKQHT1.maSV + "','" + dSKQHT2.tenKy + "','" + dSKQHT2.maSV + "','" + dSKQHT2.tenXepLoai + "','" + dSKQHT2.diem + "','" + dSKQHT2.sotinchino + "','" + dSKQHT2.chuThich + "'");
         }
 
         private void ModDSHPThiKetThuc(DSHPThiKetThuc dSHPThiKetThuc1, DSHPThiKetThuc dSHPThiKetThuc2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSHPThiKetThuc '" + dSHPThiKetThuc1.maLopHP + "','" + dSHPThiKetThuc1.maThiKetThuc + "','" + dSHPThiKetThuc2.maLopHP + "','" + dSHPThiKetThuc2.maThiKetThuc + "','" + dSHPThiKetThuc2.chuThich + "'");
         }
 
         private void ModDSHocBong(DSHocBong dSHocBong1, DSHocBong dSHocBong2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSHocBong '" + dSHocBong1.maHocBong + "','" + dSHocBong1.MaSV + "','" + dSHocBong2.maHocBong + "','" + dSHocBong2.MaSV + "','" + dSHocBong2.chuThich + "'");
         }
 
         private void ModDSGVHP(DSGVHP dSGVHP1, DSGVHP dSGVHP2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSGVHP '" + dSGVHP1.maGV + "','" + dSGVHP1.maHP + "','" + dSGVHP2.maGV + "','" + dSGVHP2.maHP + "','" + dSGVHP2.chuThich + "'");
         }
 
         private void ModDSGVChamBai(DSGVChamBai dSGVChamBai1, DSGVChamBai dSGVChamBai2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSGVChamBai '"+ dSGVChamBai1.maBaiThi + "','" + dSGVChamBai1.maGV + "','" + dSGVChamBai2.maBaiThi + "','" + dSGVChamBai2.maGV + "','" + dSGVChamBai2.ngayCham + "','" + dSGVChamBai2.diem + "','" + dSGVChamBai2.chuThich + "'");
         }
 
         private void ModDSGiangDuong(DSGiangDuong dSGiangDuong1, DSGiangDuong dSGiangDuong2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSGiangDuong '"+ dSGiangDuong1.maGD + "','" + dSGiangDuong1.maLopHP + "','" + dSGiangDuong2.maGD + "','" + dSGiangDuong2.maLopHP + "','" + dSGiangDuong2.thu + "','" + dSGiangDuong2.chuThich + "'");
         }
 
         private void ModDSGiamThi(DSGiamThi dSGiamThi1, DSGiamThi dSGiamThi2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSGiamThi '"+ dSGiamThi1.maThiKetThuc + "','" + dSGiamThi2.maThiKetThuc + "','" + dSGiamThi1.maGV + "','" + dSGiamThi2.maGV + "','" + dSGiamThi2.ngayPC + "','" + dSGiamThi2.chuThich + "'");
         }
 
         private void ModDSDiemDanhSV(DSDiemDanhSV dSDiemDanhSV1, DSDiemDanhSV dSDiemDanhSV2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSDiemDanhSV '" + dSDiemDanhSV1.maDD + "','" + dSDiemDanhSV2.maDD + "','" + dSDiemDanhSV1.maSV + "','" + dSDiemDanhSV2.maSV + "','" + dSDiemDanhSV2.soBuoi + "'");
         }
 
         private void ModDSDeThi(DSDeThi dSDeThi1, DSDeThi dSDeThi2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSDeThi '"+dSDeThi1.maBaiThi+ "','" + dSDeThi2.maBaiThi + "','" + dSDeThi1.maDeThi + "','" + dSDeThi2.maDeThi + "','" + dSDeThi2.soTo + "','" + dSDeThi2.chuThich + "'");
         }
 
         private void ModDSCoVanHT(DSCoVanHT dSCoVanHT1, DSCoVanHT dSCoVanHT2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDSCoVanHT '"+dSCoVanHT1.maLopCN+ "','" + dSCoVanHT2.maLopCN + "','" + dSCoVanHT1.maCV + "','" + dSCoVanHT2.maCV + "','" + dSCoVanHT2.ngayThanhLap + "','" + dSCoVanHT2.chuThich + "'");
         }
 
         private void ModDScanhcao(DScanhcao dScanhcao1, DScanhcao dScanhcao2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDScanhcao '"+dScanhcao1.maCanhCao+"','"+dScanhcao2.maCanhCao+"','"+dScanhcao1.maSV+"','"+dScanhcao2.maSV+"','"+dScanhcao2.chuThich+"'");
         }
 
         private void ModDiemDanh(DiemDanh diemDanh1, DiemDanh diemDanh2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModDiemDanh '" + diemDanh1.maDD + "','" + diemDanh2.maDD + "','" + diemDanh2.maLopHP + "','" + diemDanh2.soBuoiDiemDanh + "'");
         }
 
         private void ModChuyenNganhDT(ChuyenNganhDT chuyenNganhDT1, ChuyenNganhDT chuyenNganhDT2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModChuyenNganhDT '"+chuyenNganhDT1.maChuyenNganh+"','"+chuyenNganhDT2.maNganhDT+"','"+chuyenNganhDT2.maChuyenNganh+"','"+chuyenNganhDT2.tenChuyenNganh+"','"+chuyenNganhDT2.chuThich+"'");
         }
 
         private void ModCHiTietHP(CHiTietHP cHiTietHP1, CHiTietHP cHiTietHP2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModChiTietHP '"+cHiTietHP1.maHP+"','"+cHiTietHP2.maHP+"','"+cHiTietHP1.TenHinhThuc+"','"+cHiTietHP2.TenHinhThuc+"','"+cHiTietHP2.chuThich+"'");
         }
 
         private void ModCanhCao(CanhCao canhCao1, CanhCao canhCao2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModCanhCao '"+canhCao1.maCanhCao+"','"+canhCao2.maCanhCao+"','"+canhCao2.tenCanhCao+"','"+canhCao2.chuThich+"'");
         }
 
         private void ModBoMon(BoMon boMon1, BoMon boMon2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModBoMon '"+boMon1.maBM+"','"+boMon2.maBM+"','"+boMon2.maTruongBM+"','"+boMon2.maKhoa+"','"+boMon2.tenBM+"','"+boMon2.chuThich+"'");
         }
 
         private void ModBaiThi(BaiThi baiThi1, BaiThi baiThi2)
         {
-            throw new NotImplementedException();
+            db.Database.ExecuteSqlCommand("execute ModBaiThi '" + baiThi1.maBaiThi + "', '"+baiThi2.maBaiThi+"', ' ', '" + baiThi2.chuThich + "'");
         }
         /// <summary>
         ///  chức năng xóa
@@ -2266,7 +2279,7 @@ namespace AdminWeb.Controllers
 
         private void AddHocPhan(HocPhan hocPhan)
         {
-            db.Database.ExecuteSqlCommand("execute AddHocPhan '" + hocPhan.maHP + "', '" + hocPhan.maPKT + "', '" + hocPhan.tenHP+ "', '" + hocPhan.chuThich + "'");
+            db.Database.ExecuteSqlCommand("execute AddHocPhan '" + hocPhan.maHP + "', '"+ hocPhan.soTC + "', '" + hocPhan.maPKT + "', '" + hocPhan.tenHP+ "', '" + hocPhan.chuThich + "'");
         }
 
         private void AddHocBong(HocBong hocBong)
@@ -2382,7 +2395,6 @@ namespace AdminWeb.Controllers
         private void AddBaiThi(BaiThi baiThi)
         {
             db.Database.ExecuteSqlCommand("execute AddBaiThi '"+ baiThi.maBaiThi + "', ' ', '"+ baiThi.chuThich + "'");
-            
         }
     }
 }
